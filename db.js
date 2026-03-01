@@ -5,8 +5,18 @@ const authors = [
     {id: 4, name: 'Kecio'}
 ]
 
+const books = [
+    {id:123, title: 'Aaaa aaa'},
+    {id:321, title: 'Bbbb bbb'},
+    {id:213, title: 'Cccc ccc'}
+]
+
 async function getAuthorById(authorId){
     return authors.find(author => author.id = authorId)
 }
 
-module.exports = {getAuthorById}
+async function getBookById(bookId){
+    return books.find(book => book.id = bookId)
+}
+
+module.exports = {getAuthorById, getBookById}

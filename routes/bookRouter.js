@@ -1,10 +1,8 @@
 const {Router} = require('express')
+const {getBookById} = require('../controllers/bookController')
 const bookRouter = Router()
 
 bookRouter.get('/', (req,res) => res.send('all books'))
-bookRouter.get('/:bookId', (req, res) => {
-    const {bookId} = req.params
-    res.send(`Book id: ${bookId}`)
-})
+bookRouter.get('/:bookId', getBookById)
 
 module.exports = bookRouter
